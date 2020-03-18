@@ -10,7 +10,7 @@ Airbnb
 - xchmel33 Lukas Chmelo 
 - xhurba03 Nicol Hurbankova 
 - xkrama06 Denis Kramar 
-- xlisci01 Licinsk Kristian 
+- xlisci01 Licinsky Kristian 
 
 Licence
 -------

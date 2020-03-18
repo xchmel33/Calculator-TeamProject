@@ -1,8 +1,115 @@
-Tento soubor bude obsahovat:
+***IVS Projekt 2 - Plán***
 
--- stanovené termíny,
--- přidělení úkolů na projektu jednotlivým řešitelům,
--- zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci (jsou-li nějaká),
--- zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící (viz níže).
+**Úlohy**
 
-Alternativně lze odevzdat archiv xlogin01_xlogin02_xlogin03_xlogin04_plan.zip, který bude obsahovat libovolný počet souborů xlogin01_xlogin02_xlogin03_xlogin04_plan* ("*" zastupuje libovolný počet libovolných znaků, tedy např. ".mpp" či "01.jpg"), přičemž plán zde může být vytvořený v MS Projectu či jiném programu (není-li daný program ve škole dostupný, je nutno odevzdat i exportovanou verzi v PDF či jpg).
+1. Úvod, výber dátových typov, definicie funkcí
+  --začiatok programovania kalkulačky v jazyku Python
+  --zadefinuju sa funkcie pre vstup, operácie, faktoriál, umocnovanie, odmocnovanie, +lub.funkcia(logaritmus)
+  --zúčastnujú sa všetci členovia týmu, jeden programuje a streamuje obraz ostatným kotrý sa dohadujú na postupe
+  
+2. Test-driven develpomnet
+  --jeden člen týmu pripravuje testy pred programovanim a spolupracuje na programovani s kolegom
+
+3. Programovanie samotnej kalkulačky 
+  --dvaja členovia týmu si rozdelia programovanie tak, že každý programuje jednotlive funkcie samostatne
+  --jeden člen navyše pripavuje testy, dalši priebežbe robí dokumentáciu
+  --tvorí sa najprv prototyp kalkulačky bez grafického rozhrania
+
+4. Grafické rozhranie 
+  --akonáhle bude značná časť programu kalkulačky hotová tak další člen týmu začne vytvárať grafické rozhranie pre kalkulačku
+  --neskôr pomáha pri tvorbe manuálu pre požívanie kalkulačky
+  --dokončí sa až po úspešnom spustení prototypu kalkulačky
+
+5. Profiling
+  --posledný člen týmu spraví medzičasom program pre výpočet smerodatnej odchylky
+
+6. Programová dokumentácia
+  --jeden s členov týmu ktorý programuje kalkulačku priebežne vytvára dokumentáciu
+  --používať bude nástroj Doxygen
+
+7. Uživatelská dokumentácia 
+  --jeden člen týmu spraví nápovedu ku kalkulačke pre užívateľov
+
+8. Makefile
+  --aspoň dvaja členovia týmu si nájdu informácie na internete ako spraviť Makefile pre kompiláciu
+  --spoločnými znalostami zaistia spustenie a splnenie všetkých cielov(častí programu)
+
+9. Debugging 
+  --jeden člen týmu vyskúša debugging 
+  --vytvorí snimky obrazovky debuggeru a popis debuggingu
+
+10. Mockup 
+  --jeden člen týmu spraví plány do budúcna s kalkulačkou
+  --aké funkcie budu obsahovat daľšie verzie atď.
+
+11. Inštalácia + odinštalácia 
+  --jeden člen týmu spraví inštalátor(zároveň aj odinsšalátor) programu
+  --k inštalátoru pripravý aj návod na inštaláciu a odinštaláciu porgramu
+
+
+**Stanovené termíny:
+
+27/03/2020 
+  --Úvod, výber dátových typov, definicie funkci(1)
+  --po skončení príslušný členovia týmu začnú pracovať na programovaní klakulačky a programu profiling(2,3,5)
+
+02/04/2020
+  --učakávaný postup v programovaní kalkulačky a proflingu(2,3,5)
+  --začiatok tovrby grafického rozhrania(4)
+  --stretnutie a kontrola funkcionality
+
+10/04/2020
+  --postupné dokončenie programovania kalkulačky a proflingu(2,3,5)
+  --očakávaný postup v tovrbe grafického rozhrania(4)
+  --stretnutie a kontrola sfunkcionality
+ 
+17/04/2020
+  --dokončenie grafického rozhrania(4)
+  --začiatok práce na tvorbe manuálu pre požívanie kalkulačky(7) a ostatných menších úloh(8-11)
+  --dokončenie dokumentácie kódu(6)
+  
+22/04/2020
+  --dokončenie projektu
+  --stretnutie a záverečná kontrola všetkých častí programu či pracujú ako majú, či projekt splnuje zadanie, kontrola funkcionality
+
+23/04/2020
+  --odovzdanie projektu
+
+
+**Pridelenie úloh na projektu jednotlivým riešiteľom**
+
+Lukáš Chmelo, xchmel33, vedúci týmu
+  --úvod, výber dátových typov, definicie funkcí(1)
+  --test-driven development(2)
+  --programovanie samotnej kalkulačky(3)
+  --programova dokumentacia(6)
+  
+Nicol Hurbánková, xhurba03
+  --úvod, výber dátových typov, definicie funkcí(1)
+  --programovanie samotnej kalkulačky(3)
+  --uživatelská dokumentácia(7)
+  --makefile(8)
+  
+Denis Kramár, xkrama06
+  --úvod, výber dátových typov, definicie funkcí(1)
+  --grafické rozhranie(4)
+  --debugging(9)
+  --inštalácia + odinštalácia(11)
+ 
+ Kristián Liščinský, xlisci01
+ --úvod, výber dátových typov, definicie funkcí(1)
+ --profiling(5)
+ --makeflie(8)
+ --mockup(10)
+
+
+**Zvolené komunikačné kanály pro komunikaci v týmu**
+
+ --Ako komunikačný kanál sme zvolili discord, z dôvodu mnohých výhod ako sú napríklad bezplatnn vytvorenie vlastného týmu kde môžeme        písomne a ústne komunikovať, a tak si dohadovať interaktívne stretnutia, vytvoriť si nástenku so zadaním, plánom a detailami            projektu.
+ --Pravidlá pre komunikáciu nebudú potreba, tým sa osvedčil slušne sa vyjadrujúcimi členmi
+
+
+**Zvolený systém pro správu verzí a hosting**
+
+--Server ivs.fit.vutbr.cz: xchmel33/odevzdane
+--Github: 

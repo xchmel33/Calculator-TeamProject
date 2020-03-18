@@ -112,4 +112,4 @@ Denis Kramár, xkrama06
 **Zvolený systém pro správu verzí a hosting**
 
 --Server ivs.fit.vutbr.cz: xchmel33/odevzdane
---Github: 
+--Github: https://github.com/xchmel33/ivs_teamproject_airbnb.git

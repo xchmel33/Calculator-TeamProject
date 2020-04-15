@@ -17,11 +17,14 @@ import math
 #function operates all additons in expression(string)
 def addition(expression):
 
-    i = 0
+    if expression[0]=='+':
+        del expression[0]
+
+    i = 1
     while i!=len(expression):
 
         #find operation
-        if i>0 and expression[i] == "+":
+        if expression[i] == "+":
 
             #convert string to float
             x=float(expression[i-1])
@@ -44,16 +47,16 @@ def addition(expression):
 #with addition of opposite number in expression(string)
 def subtraction(expression):
 
-    i=0
+    i=1
     while i!=len(expression):
 
         #find negative number
-        if i>0 and str(expression[i]).isdigit() and expression[i-1]=="-":
+        if str(expression[i]).replace('.', '', 1).isdigit() and expression[i-1]=="-":
             expression[i]=-float(expression[i])
             del expression[i-1]
 
             #in case of subtraction
-            if i>1 and str(expression[i-2]).isdigit():
+            if i>1 and str(expression[i-2]).replace('.', '', 1).isdigit():
                 expression.insert(i-1, "+")
 
         else:
@@ -65,11 +68,11 @@ def subtraction(expression):
 #function operates all multiplications in array expression
 def multiplication(expression):
 
-    i = 0
+    i = 1
     while i!=len(expression):
 
         #find operation
-        if i>0 and expression[i] == "*":
+        if expression[i] == "*":
 
             #convert string to float
             x=float(expression[i-1])
@@ -79,8 +82,8 @@ def multiplication(expression):
             expression[i]=round(x*y,10)
 
             #remove solved parts of string in expression
-            expression.remove(expression[i-1])
-            expression.remove(expression[i])
+            del expression[i-1]
+            del expression[i]
 
         else:
             i+=1
@@ -91,11 +94,11 @@ def multiplication(expression):
 #function operates all divisions in array expression
 def division(expression):
 
-    i = 0
+    i = 1
     while i!=len(expression):
 
         #find operation
-        if i>0 and expression[i] == "/":
+        if expression[i] == "/":
 
             #convert string to float
             x=float(expression[i-1])
@@ -122,11 +125,11 @@ def division(expression):
 #function operates all factiorials in array expression
 def factorial(expression):
 
-    i = 0
+    i = 1
     while i!=len(expression):
 
         #find operation
-        if i>0 and expression[i] == "!":
+        if expression[i] == "!":
 
             #convert string to float
             x=int(expression[i-1])
@@ -153,13 +156,13 @@ def factorial(expression):
 #function operates all powers in array expression
 def power(expression):
 
-    i = 0
+    i = 1
     while i!=len(expression):
-        if i>0 and expression[i] == "^":
+        if expression[i] == "^":
 
             #convert string to float
             x=float(expression[i-1])
-            n=int(expression[i+1])
+            n=float(expression[i+1])
 
             #error check
             if x<0:
@@ -186,8 +189,8 @@ def root(expression):
         if expression[i] == "r":
 
             #root with both arguments
-            if i>0 and str(expression[i-1]).isdigit():
-                n=int(expression[i-1])
+            if i>0 and str(expression[i-1]).replace('.', '', 1).isdigit():
+                n=float(expression[i-1])
                 x=float(expression[i+1])
 
             #defalut root:
@@ -199,13 +202,23 @@ def root(expression):
                 expression.insert(i+1,0)
                 i+=1
 
+            #negative root
+            negative = False
+            if x<0 and n%2==1:
+                negative = True
+                x=-x
+
 
             #error check
+            if x<0 and n%2==0:
+                raise ValueError("Sqaure roots can be only from possitive numbers")
             if n<0:
                 raise ValueError("Root has to be integer or equal to 0")
 
             #root calculation
-            expression[i]=round(x**(1/n),10)
+            expression[i]=x**(1/n)
+            if negative:
+                expression[i]=-expression[i]
 
             #remove solved parts of string in array expression
             del expression[i-1]
@@ -219,7 +232,7 @@ def root(expression):
 
 #+lub funkce
 #function operates all logartims in array expression
-def logaritm(expression):
+def logarithm(expression):
 
     i = 0
     while i!=len(expression):
@@ -227,17 +240,7 @@ def logaritm(expression):
         #find operation
         if expression[i] == "l" and expression[i+1] == "o" and expression[i+2]=="g":
 
-            #if base is given
-            if i+4 != len(expression) and str(expression[i+4]).isdigit():
-                a=float(expression[i+3])
-                x=float(expression[i+4])
-
-                #errors check
-                if a == 1 or a <= 0:
-                    raise ValueError("Logarithm base has to be greater than 0, but can't be equal to 1")
-
-            #if base is not given set it to default
-            else:
+            if str(expression[i+3]).replace('.', '', 1).isdigit():
                 a=10
                 x=float(expression[i+3])
 
@@ -249,7 +252,7 @@ def logaritm(expression):
             expression[i]=round(math.log(x,a))
 
             #remove solved parts of string in array expression
-            if i+4 != len(expression) and expression[i+4].isdigit():
+            if i+4 != len(expression) and str(expression[i+4]).replace('.', '', 1).isdigit():
                 del expression[i+4]
             del expression[i+3]
             del expression[i+2]
@@ -301,10 +304,14 @@ def calc_parenthesis(expr,tph):
         #inside deepest parenthesis
         if diff == tph:
 
-            #at the start
-            if expr[i]=="(":
+            #single num inside
+            if expr[i]=="(" and expr[i+2]==")":
+                del expr[i+2]
+                del expr[i]
+                break
 
-                #delete parenthesis
+            #delete start parenthesis
+            if expr[i]=="(":
                 del expr[i]
 
             #at the end
@@ -336,27 +343,35 @@ def calc_inside(expression):
 
     #factorial
     result = factorial(expression)
+    print("result after factorial="+str(result))
 
     #change subtraction to negative
     result = subtraction(result)
+    print("result after negative="+str(result))
 
     #logaritm
-    result = logaritm(result)
+    result = logarithm(result)
+    print("result after log="+str(result))
 
     #root
     result = root(result)
+    print("result after root="+str(result))
 
     #power
     result = power(result)
+    print("result after power="+str(result))
 
     #multiply
     result = multiplication(result)
+    print("result after mul="+str(result))
 
     #division
     result = division(result)
+    print("result after div="+str(result))
 
     #addition
     result=addition(result)
+    print("result after add="+str(result))
 
     return result[0]
 

@@ -375,4 +375,5 @@ def calc_inside(expression):
 
     return result[0]
 
-
+def sqrt(number):
+    return math.sqrt(number)

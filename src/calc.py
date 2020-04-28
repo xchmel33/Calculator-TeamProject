@@ -165,8 +165,8 @@ def power(expression):
             n=float(expression[i+1])
 
             #error check
-            if x<0:
-                raise ValueError("Exponent has to be integer, which is greater or equal 0")
+            #if x<0:
+            #    raise ValueError("Exponent has to be integer, which is greater or equal 0")
 
             #power calculation
             expression[i]=round(x**n,10)

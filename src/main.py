@@ -1,10 +1,3 @@
-######################
-# IVS - team project #
-#        main        #
-######################
-#       Authors:     #
-# xchmel33, xhurba03 #
-######################
 
 import calc
 import re
@@ -83,6 +76,5 @@ def main(user_input):
 
     return expression
 
-a=input()
-print(main(a))
+
 

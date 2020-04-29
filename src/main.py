@@ -2,7 +2,7 @@
 import calc
 import re
 
-def main(user_input):
+def calculation(user_input):
 
     #input validation
     asuffix = ")!"

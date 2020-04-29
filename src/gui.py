@@ -1,12 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-##
-# @file gui.py
-# @brief GUI for ivs-calc calculator.
-# @author Denis Kramár <xkrama06@vutbr.cz>
-# @date April 2019
-#
+"""GUI for ivs-calc calculator
+"""
 
 from PyQt5.QtWidgets import QLayout, QApplication, QToolButton, QLineEdit, QSizePolicy, QGridLayout, QWidget
 from PyQt5.QtCore import Qt
@@ -15,8 +11,12 @@ from decimal import Decimal
 import sys
 import main
 
-# define button shape and font
 class Button(QToolButton):
+     """Define custom button size and font
+
+     :param text: text of the button
+     :type text: str
+     """
      def __init__(self, text):
           super().__init__()
 
@@ -32,22 +32,18 @@ class Button(QToolButton):
         size.setWidth(max(size.width(), size.height()))
         return size
 
-# main window
 class CalculatorWindow(QWidget):
+     """Window of the calculator, create buttons, display, grid layout and attach to layout
+     """
      def __init__(self):
           super().__init__()
 
-          # expression shown on display
           self.displayExpression = ""
-
-          # expression for calculation
           self.calculateExpression = ""
 
-          # define window title, position and size
           self.setWindowTitle('Calculator')
           self.setGeometry(200, 200, 300, 500)
 
-          # define display and font size
           self.display = QLineEdit('0')
           self.display.setFixedHeight(70)
           self.display.setReadOnly(True)
@@ -58,85 +54,79 @@ class CalculatorWindow(QWidget):
           font.setPointSize(font.pointSize() + 7)
           self.display.setFont(font)
 
-          # define clear all button and backspace button
           self.clearAllButton = self.createButton("CE", self.clearAllClicked)
           self.backspaceButton = self.createButton("<=", self.backspaceClicked)
 
-          # define buttons for math operations
           self.operantsButton = []
           self.operants = ["x^n", "n√x", "log", "x!", "+", "-", "×", "÷"]
 
           for i in range(len(self.operants)):
                self.operantsButton.append(self.createButton(str(self.operants[i]), self.buttonClicked))
 
-          # define number buttons
           self.numbersButton = []
           for i in range(9,0,-1):
                self.numbersButton.append(self.createButton(str(i), self.buttonClicked))
 
-          # define button for 0 number and decimal point
           self.number0Button = self.createButton("0", self.buttonClicked)
           self.decimalButton = self.createButton(".", self.buttonClicked)
           
-          # define button for open and closed parentheses
           self.openParenthesisButton = self.createButton("(", self.buttonClicked)
           self.closedParenthesisButton = self.createButton(")", self.buttonClicked)
 
-          # define equal sign button
           self.equalsButton = self.createButton("=", self.equalsClicked)
 
-          # create grid layout
           gridLayout = QGridLayout()
           gridLayout.setSizeConstraint(QLayout.SetFixedSize)
 
-          # assign display to position
           gridLayout.addWidget(self.display, 0, 0, 1, 4)
 
-          # assign clear all and backspace buttons to position
           gridLayout.addWidget(self.clearAllButton, 1, 0, 1, 2)
           gridLayout.addWidget(self.backspaceButton, 1, 2, 1, 2)
 
-          # assign operants to position
           for i in range(2):
                for j in range(4):
                     gridLayout.addWidget(self.operantsButton[i*4+j], i+2, j)
 
-          # assign numbers to position
           for i in range(3):
                for j in range(3):
                     gridLayout.addWidget(self.numbersButton[i*3+j], i+4, 2-j)
 
-          # assign number 0 and decimal point to position
           gridLayout.addWidget(self.number0Button, 7, 0, 1, 2)
           gridLayout.addWidget(self.decimalButton, 7, 2)
           
-          # assign open and closed parentheses, and equals sign button to position
           gridLayout.addWidget(self.openParenthesisButton, 4, 3,)
           gridLayout.addWidget(self.closedParenthesisButton, 5, 3)
           gridLayout.addWidget(self.equalsButton, 6, 3, 2, 1)
 
           self.setLayout(gridLayout)
 
-     # creates custom buttom 
-     """
-     @brief creates custom button
-     """
+
+
      def createButton(self, text, member):
+          """Create button using custom Button class and link click function to it
 
-        button = Button(text)
-        button.clicked.connect(member)
-        return button
+          :param text: text of the button
+          :type text: str
+          :param member: on click function
+          :type member: function
+          """
 
-     # recognises if clearall button was clicked, clears expressions and shows empty display
+          button = Button(text)
+          button.clicked.connect(member)
+          return button
+
      def clearAllClicked(self):
+          """Recognises if clearall button was clicked, clears expression variables and shows empty display
+          """
           self.displayExpression = ""
           self.calculateExpression = ""
 
           self.display.setText(self.displayExpression)
           print(self.calculateExpression)
 
-     # recognises if backspace button was clicked, removes last char or "log" from expressions
      def backspaceClicked(self):
+          """Recognises if backspace button was clicked, removes last char or "log" from expressions and from display
+          """
           if (len(self.displayExpression) == 0):
                return
           elif self.displayExpression[-3:] == "log":
@@ -149,8 +139,9 @@ class CalculatorWindow(QWidget):
           self.display.setText(self.displayExpression)
           print(self.calculateExpression)
 
-     # recognises other buttons clicks and adds signs to expressions
      def buttonClicked(self):
+          """Recognises other buttons' clicks and symbol of clicked button to expressions and on display
+          """
           clickedButton = self.sender()
           textOfButtonDisplay = clickedButton.text()
           if len(self.displayExpression) >= 20:
@@ -179,8 +170,9 @@ class CalculatorWindow(QWidget):
           self.display.setText(self.displayExpression)
           print(self.calculateExpression)
 
-     # recognises if equals was clicked, tries to get result or pops out error to screen
      def equalsClicked(self):
+          """Recognises if equals sign was clicked, tries to get resulr or pops out error to display
+          """
           try:
                result = str(main.calculation(self.calculateExpression))
                self.calculateExpression = result

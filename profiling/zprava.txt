@@ -1,0 +1,13 @@
+Vďaka nízkej náročnosti programu pre výpočet smerodatnej odchylky je meranie časovej náročnosti pomerne nepresné.
+Z výstupu profileru je zrejme, že najviac volanou funkciou z matematickej knižnice je funkcia na sčítanie (addition),
+za ňou nasleduju funkcie odčítania (subtraction) a umocňovania (power).
+
+Pre N prvkov je funkcia sčítania (addition) volaná 2*N+2-krát.
+Funkcie na odčítanie (subtraction) a umocňovanie (power) sú pre N prvkov volané N-krát.
+Ďalšiou použitou funkciou je funkcia delenia (division), ktorá je pri výpočte smerodatnej odchylky použitá 2krát
+bez ohľadu na počet prvkov.
+Posledná použitá funkcia z matematickej knižnice je funkcia na výpočet odmocniny (sqrt), ktorá je použitá raz bez
+ohľadu na počet prvkov.
+
+Pri plánovanej optimalizácií výpočtu smerodatnej odchylky by sme sa mali zamerať predovšetkým na funkciu na
+sčítania (addition).

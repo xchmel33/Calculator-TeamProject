@@ -1,4 +1,3 @@
-
 import calc
 import re
 
@@ -75,6 +74,3 @@ def calculation(user_input):
         expression = calc.calc_inside(expression)
 
     return expression
-
-
-

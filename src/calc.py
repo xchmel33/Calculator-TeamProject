@@ -163,16 +163,12 @@ def power(expression):
     :param expression: input, so far calculated expression from other functions
     :type expression: list
     :param i: index
-    :raises ValueError: exponent cannot be negative
     :return: updated list where all powers were calculated
     """
 
     i = 1
     while i!=len(expression):
         if expression[i] == "^":
-
-            if float(expression[i+1])<0:
-                raise ValueError("Exponent has to be greater or equal to 0")
 
             expression[i]=round(float(expression[i-1])**float(expression[i+1]),10)
             del expression[i-1]

@@ -1,1 +1,13 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+xlisci01 xhurba03 xkrama06 xchmel33
+
+Rozdiely medzi plánom a skutočnosťou
+
+1. Nepodarilo sa nám splniť všetky nastavené deadliny. Niektoré z nich boli splnené až o niekoľko dní neskôr.
+   Dôvodom nesplnenia bolo najmä nadmerné vyťaženie u povinných predmetov.
+
+2. Pôvodné rozdelenie úloh nebolo úplne správne, neodhadli sme u všetkých častí ich časovú náročnosť a v priebehu
+   sme si niektoré úlohy prerozdelili.
+
+3. Tímová komunikácia prebiehla bez problémov, používali sme Discord
+
+4. System pre správu verzií: dodržali sme plán a využívali Github, kde sme ukladali všetky vytvorené veci.

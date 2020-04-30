@@ -35,12 +35,10 @@ def deviation(allItems, arithmeticMean):
         result = calc.addition([result[0], "+", part[0]])
 
     deviation = calc.division([result[0], "/", calc.addition([len(allItems), "+", -1])[0]])[0]
-    deviation = calc.sqrt(deviation)
+    deviation = calc.root(["r", deviation])[0]
     return deviation
-'''
+
 allItems = getAllItems()
 arithmeticMean = arithmeticMean(allItems)[0]
 result = deviation(allItems, arithmeticMean)
 print(result)
-'''
-print(calc.root([2, "r", 5]))

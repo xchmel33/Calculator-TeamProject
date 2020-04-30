@@ -6,7 +6,7 @@ Pre N prvkov je funkcia sčítania (addition) volaná 2*N+2-krát.
 Funkcie na odčítanie (subtraction) a umocňovanie (power) sú pre N prvkov volané N-krát.
 Ďalšiou použitou funkciou je funkcia delenia (division), ktorá je pri výpočte smerodatnej odchylky použitá 2krát
 bez ohľadu na počet prvkov.
-Posledná použitá funkcia z matematickej knižnice je funkcia na výpočet odmocniny (sqrt), ktorá je použitá raz bez
+Posledná použitá funkcia z matematickej knižnice je funkcia na výpočet odmocniny (root), ktorá je použitá raz bez
 ohľadu na počet prvkov.
 
 Pri plánovanej optimalizácií výpočtu smerodatnej odchylky by sme sa mali zamerať predovšetkým na funkciu na

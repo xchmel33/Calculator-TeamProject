@@ -68,7 +68,7 @@ python3.6 -m cProfile stddev.py < test10values
         1    0.000    0.000    0.000    0.000 calc.py:12(<module>)
        10    0.000    0.000    0.000    0.000 calc.py:157(power)
        22    0.000    0.000    0.000    0.000 calc.py:18(addition)
-        1    0.000    0.000    0.000    0.000 calc.py:378(sqrt)
+        1    0.000    0.000    0.000    0.000 calc.py:378(root)
        10    0.000    0.000    0.000    0.000 calc.py:48(subtraction)
         2    0.000    0.000    0.000    0.000 calc.py:95(division)
         3    0.000    0.000    0.000    0.000 codecs.py:318(decode)
@@ -107,7 +107,7 @@ python3.6 -m cProfile stddev.py < test10values
        42    0.000    0.000    0.000    0.000 {built-in method builtins.round}
         4    0.000    0.000    0.000    0.000 {built-in method from_bytes}
         2    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
-        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+        1    0.000    0.000    0.000    0.000 {built-in method math.root}
         7    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
         5    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
        13    0.000    0.000    0.000    0.000 {built-in method posix.stat}
@@ -196,7 +196,7 @@ python3.6 -m cProfile stddev.py < test100values
         1    0.000    0.000    0.000    0.000 calc.py:12(<module>)
       100    0.000    0.000    0.000    0.000 calc.py:157(power)
       202    0.001    0.000    0.001    0.000 calc.py:18(addition)
-        1    0.000    0.000    0.000    0.000 calc.py:378(sqrt)
+        1    0.000    0.000    0.000    0.000 calc.py:378(root)
       100    0.001    0.000    0.001    0.000 calc.py:48(subtraction)
         2    0.000    0.000    0.000    0.000 calc.py:95(division)
         3    0.000    0.000    0.000    0.000 codecs.py:318(decode)
@@ -235,7 +235,7 @@ python3.6 -m cProfile stddev.py < test100values
       402    0.001    0.000    0.001    0.000 {built-in method builtins.round}
         4    0.000    0.000    0.000    0.000 {built-in method from_bytes}
         2    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
-        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+        1    0.000    0.000    0.000    0.000 {built-in method math.root}
         7    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
         5    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
        13    0.000    0.000    0.000    0.000 {built-in method posix.stat}
@@ -324,7 +324,7 @@ python3.6 -m cProfile stddev.py < test1000values
         1    0.000    0.000    0.002    0.002 calc.py:12(<module>)
      1000    0.003    0.000    0.007    0.000 calc.py:157(power)
      2002    0.008    0.000    0.018    0.000 calc.py:18(addition)
-        1    0.000    0.000    0.000    0.000 calc.py:378(sqrt)
+        1    0.000    0.000    0.000    0.000 calc.py:378(root)
      1000    0.010    0.000    0.013    0.000 calc.py:48(subtraction)
         2    0.000    0.000    0.000    0.000 calc.py:95(division)
         3    0.000    0.000    0.000    0.000 codecs.py:318(decode)
@@ -363,7 +363,7 @@ python3.6 -m cProfile stddev.py < test1000values
      4002    0.010    0.000    0.010    0.000 {built-in method builtins.round}
         4    0.000    0.000    0.000    0.000 {built-in method from_bytes}
         2    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
-        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+        1    0.000    0.000    0.000    0.000 {built-in method math.root}
         7    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
         5    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
        13    0.000    0.000    0.000    0.000 {built-in method posix.stat}

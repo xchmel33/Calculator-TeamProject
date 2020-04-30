@@ -1,4 +1,4 @@
-xchmel33 100 (test-driven development, programovanie samotnej kalkulačky, programova dokumentacia)
-xhurba03 100 (programovanie samotnej kalkulačky, uživatelská dokumentácia)
-xkrama06 100 (profiling, instalátor)
-xlisci01 100 (testy, dokumentace)
+xchmel33 100 (test-driven development, programovanie samotnej kalkulačky, programova dokumentacia, mockup)
+xhurba03 100 (programovanie samotnej kalkulačky, uživatelská dokumentácia, mockup)
+xkrama06 100 (profiling, instalátor, mockup)
+xlisci01 100 (testy, dokumentace, mockup)

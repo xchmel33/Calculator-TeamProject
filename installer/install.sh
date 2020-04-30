@@ -89,12 +89,12 @@ else
     read answer
 
     if echo "$answer" | grep -iq "^y"; then
-        pyinstaller -F ../src/gui.py
+        pyinstaller -F ../repo/src/gui.py
 
         sudo mv ./dist/gui /usr/share/applications/ivs-calc
         sudo mkdir /usr/share/ivs-calc
-        sudo cp ../ivs-calc-icon.png /usr/share/ivs-calc
-        sudo cp ../ivs-calc-icon-uninstaller.png /usr/share/ivs-calc
+        sudo cp ../repo/ivs-calc-icon.png /usr/share/ivs-calc
+        sudo cp ../repo/ivs-calc-icon-uninstaller.png /usr/share/ivs-calc
 
         if [ ! -e "ivs-calc.desktop" ]; then 
             echo "[Desktop Entry]" >> "ivs-calc.desktop"
@@ -129,7 +129,7 @@ else
         sudo rm -rf ./dist
         sudo rm -rf ./build
         sudo rm -rf ./gui.spec
-        sudo rm -rf ../src/__pycache__
+        sudo rm -rf ../repo/src/__pycache__
 
         echo "Application installation was successful."
 
